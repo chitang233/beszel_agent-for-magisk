@@ -1,0 +1,13 @@
+#!/bin/sh
+
+dir="/data/adb/beszel"
+source ${dir}/setting
+
+if pid=$(pgrep -f "beszel.*verbose"); then
+
+  kill -15 $pid
+
+  echo "beszel_agent has stopped"
+else
+  echo "beszel_agent is not running"
+fi
