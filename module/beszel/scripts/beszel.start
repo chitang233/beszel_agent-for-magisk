@@ -2,8 +2,6 @@
 
 dir="/data/adb/beszel"
 source ${dir}/setting
-echo $PORT
-echo $KEY
 
 rm $dir/log.txt 2>/dev/null
 touch $dir/log.txt
