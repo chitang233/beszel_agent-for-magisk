@@ -19,5 +19,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: beszel_agent-for-magisk
-          path: beszel_agent-for-magisk.zip
+          path: module/
           if-no-files-found: error
