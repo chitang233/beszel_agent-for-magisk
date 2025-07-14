@@ -25,3 +25,4 @@ zip -r ../beszel_agent-for-magisk.zip .
 popd
 
 sed -i "s/${beszel_version}/AGENT_VERSION/g" module/module.prop
+sed -i "s/${versionCode}/VERSION_CODE/g" module/module.prop
