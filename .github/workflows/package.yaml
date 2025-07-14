@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Run package script
         run: bash package.sh
@@ -19,7 +21,6 @@ jobs:
         run: |
           module/beszel/bin/x64 version
           git rev-list --count --all
-          git log --oneline 
           sed -i "s/AGENT_VERSION/$(module/beszel/bin/x64 version | sed 's/beszel-agent //')/g" module/module.prop
           sed -i "s/VERSION_CODE/$(git rev-list --count --all)/g" module/module.prop
           cat module/module.prop
