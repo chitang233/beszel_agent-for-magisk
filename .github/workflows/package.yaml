@@ -15,6 +15,10 @@ jobs:
       - name: Run package script
         run: bash package.sh
       
+      - name: Write version information
+        run: |
+          sed -i "s/$(module/beszel/bin/x64 version | sed 's/beszel-agent //')/AGENT_VERSION/g" module/module.prop
+          sed -i "s/VERSION_CODE/$(git rev-list --count --all)/g" module/module.prop
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
