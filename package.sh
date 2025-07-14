@@ -15,8 +15,10 @@ mkdir -p module/beszel/bin
 mv beszel/beszel/output/* module/beszel/bin/
 
 beszel_version=$(module/beszel/bin/x64 version | sed 's/beszel-agent //')
-
 sed -i "s/AGENT_VERSION/${beszel_version}/g" module/module.prop
+
+versionCode=$(git rev-list --count --all)
+sed -i "s/VERSION_CODE/${versionCode}/g" module/module.prop
 
 pushd module
 zip -r ../beszel_agent-for-magisk.zip .
