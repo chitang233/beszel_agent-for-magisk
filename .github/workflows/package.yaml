@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Run package script
-        run: sh package.sh
+        run: bash package.sh
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
