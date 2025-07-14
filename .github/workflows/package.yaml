@@ -19,7 +19,8 @@ jobs:
         run: |
           module/beszel/bin/x64 version
           git rev-list --count --all
-          sed -i "s/$(module/beszel/bin/x64 version | sed 's/beszel-agent //')/AGENT_VERSION/g" module/module.prop
+          git log --oneline 
+          sed -i "s/AGENT_VERSION/$(module/beszel/bin/x64 version | sed 's/beszel-agent //')/g" module/module.prop
           sed -i "s/VERSION_CODE/$(git rev-list --count --all)/g" module/module.prop
           cat module/module.prop
 
