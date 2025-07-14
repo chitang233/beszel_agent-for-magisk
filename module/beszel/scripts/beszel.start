@@ -6,7 +6,6 @@ source ${dir}/setting
 rm $dir/log.txt 2>/dev/null
 touch $dir/log.txt
 if ! (pgrep -f "beszel.*verbose") > /dev/null ; then
-  source ${dir}/setting
   nohup "$dir/beszel_agent" > "$dir/log.txt" 2>&1 &
   echo "beszel_agent has started"
 else
