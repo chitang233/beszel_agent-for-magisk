@@ -1,0 +1,23 @@
+name: Package and Upload
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Run package script
+        run: sh package.sh
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: beszel_agent-for-magisk
+          path: beszel_agent-for-magisk.zip
+          if-no-files-found: error
