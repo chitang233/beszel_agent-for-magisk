@@ -1,6 +1,6 @@
 id=beszel_agent-for-magisk
 name=Beszel Agent for Magisk
-version=1.0 (agent: AGENT_VERSION)
+version=1.1 (agent: AGENT_VERSION)
 versionCode=VERSION_CODE
 author=chitang233
 description=Use Beszel Agent in Magisk
